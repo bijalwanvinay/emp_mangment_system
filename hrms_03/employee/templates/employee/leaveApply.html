@@ -1,0 +1,100 @@
+
+{% extends 'employee/emp_home_01.html' %}
+
+{% block content %}
+
+
+
+
+<div class="card shadow m-5">
+    <div class="card-body">
+        <h5 class="p-2 text-danger" style="border-bottom: 2px solid orange">Apply Leave</h5>
+
+        <div class="container-fluid">
+            <form method="post" name="signup" onsubmit="return checkpassword()">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Type OF Leave</option>
+                                <option value="1">CL</option>
+                                <option value="2">EL</option>
+                                <option value="3">LWP</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Start Date</label>
+                            <input type="date" name="lastname" class="form-control" placeholder="Enter start Date" required>>
+                                
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>End Date</label>
+                            <input type="date" name="empcode" class="form-control" placeholder="Enter End Date" required>
+                                
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Reason</label>
+                            <input type="text" name="reason" class="form-control" placeholder="Enter Reason" >
+                                
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label>Total Days</label>
+                            <h5>1 CL</h5>
+                                
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <div class="btn btn-primary">
+                            <label class="material-icons" >add</label>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    
+                    
+
+                    
+
+                    
+
+                </div>
+
+                
+                <input type="submit" value="Submit" class="btn btn-primary">
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if error == "no" %}
+    <script>
+        alert('Leave Apply Successfully')
+       // window.location = ('{% url 'login' %}');
+    </script>
+{% endif %}
+
+{% if error == "yes" %}
+    <script>
+        alert('Something wet wrong, Try Again...');
+    </script>
+{% endif %}
+
+
+{% endblock content %}

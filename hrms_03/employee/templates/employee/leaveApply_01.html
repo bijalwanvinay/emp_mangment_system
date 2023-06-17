@@ -1,0 +1,121 @@
+{% extends 'employee/emp_home_01.html' %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col-sm-12 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="p-2 text-danger" style="border-bottom: 2px solid orange">Apply for Leave</h5>
+        
+                <div class="container-fluid">
+                    <form method="post" name="leaveApply">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-sm-2">
+                               <div class="form-group">
+                                    <label>Leave Type</label>
+                                    <select name="leave_type" class="form-control">
+                                        <option value="None">Select Leave</option>
+                                        <option value="CL">Casual Leave</option>
+                                        <option value="EL">Earned Leave</option>
+                                        <option value="LWP">Leave Without Pay</option>
+                                        <option value="SL">Sick Leave</option>
+                                        
+                                    </select>
+                                        
+                                </div>
+                            </div>
+        
+                            
+        
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Start Date</label>
+                                    <input type="date" name="start_date" class="form-control" placeholder="Enter start Date" required>
+                                        
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>End Date</label>
+                                    <input type="date" name="end_date" class="form-control" placeholder="Enter End Date" required>
+                                        
+                                </div>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Reason</label>
+                                    <input type="text" name="reason" class="form-control" placeholder="Enter Reason" >
+                                        
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        
+        
+                        
+                            <input type="submit" value="Submit" class="btn btn-primary">
+                        
+                    
+        
+                    </form>
+                </div>
+            </div>  
+                           
+            <div class="card-body">
+                <div class="container-fluid">
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Sr. No</th>
+                            <th scope="col">Leave Type</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">End Date</th>
+                            <th scope="col">Reason</th>
+                            <th scope="col">No. of Days</th>
+                            <th scope="col">Remove</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for leave in leave_data %}
+                          <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td>{{ leave.leave_type}}</td>
+                            <td>{{  leave.start_date }}</td>
+                            <td>{{  leave.end_date }}</td>
+                            <td>{{  leave.reason }}</td>
+                            <td>{{ leave.get_duration }}</td>
+                            <td><a href="{% url 'deleteLeave' leave.id %}">delete</a</td>
+                            
+                            
+                          </tr>
+                          {% endfor %}
+                          
+                          
+                          
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}                                               
+                
+          
+
+
+                            
+        
+                      
+
+           

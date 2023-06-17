@@ -1,0 +1,25 @@
+#logo {
+    height: 40px;
+    width: auto;
+}
+
+body {
+    background-color: #ebeff5;
+}
+
+#total_emp {
+    background-color: #4cb4c7;
+}
+
+#HOD{
+    background-color: #7CD1C0;
+}
+
+#attendnce {
+    background-color: #7CD1C0;
+}
+
+
+#leave {
+    background-color: aqua;
+}

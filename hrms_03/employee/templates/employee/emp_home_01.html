@@ -1,0 +1,54 @@
+{% extends "employee/base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .list-group-item{
+        padding: 8px;
+    }
+</style>
+
+<div class="conatiner-fluid">
+    <div class="row">
+        <div class="col-sm-2 p-0">
+            {% if user.is_authenticated %}
+                
+                    {% if emp.profile_image %}
+                        <center>
+                            <img src = "{{ emp.profile_image.url  }}" alt="Profile Picture" width="100" height="100" class="img-thumbnail rounded-circle my-3" >
+                        </center>
+                    {% else %}
+                        <center>
+                            <img src="{% static 'images/default.png' %}" width="100" height="100" class="img-thumbnail rounded-circle my-3">
+                        </center>    
+                    {% endif %}
+                
+            {% endif %}            
+
+            <div class="list-group">
+                <a href="{% url 'emp_home' %}"  class="list-group-item list-group-item-warning list-group-item-action">Dashboard</a>
+                <a href="{% url 'profile' %}"  class="list-group-item list-group-item-warning list-group-item-action">Profile</a>
+                <a href="{% url 'leaveApply' %}"  class="list-group-item list-group-item-warning list-group-item-action">Apply Leave</a>
+                <a href="#"  class="list-group-item list-group-item-warning list-group-item-action">Attendance</a>
+                <a href="#"  class="list-group-item list-group-item-warning list-group-item-action">Change Password</a>
+                <a href="{% url 'logout' %}"  class="list-group-item list-group-item-warning list-group-item-action">Logout</a>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="conatiner-fluid">
+                <h2 class="text-center p-3" style="border-bottom: 2px solid green; border-top: 2px solid green; margin-top: 8px;">Employee Record Managment System</h2>
+
+                <div class="card shadow" style="min-height: 70vh;">
+                    <div class="card-body">
+                        {% block main %}
+                        
+                        {% endblock %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

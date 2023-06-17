@@ -1,0 +1,70 @@
+{% extends "employee/base.html" %}
+
+{% block content %}
+{% include 'employee/status.html' %}
+<br>
+<div class="row">
+    <div class="col-md-8">
+        <h5>Employee</h5>
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary btn-sm, btn-blcok" href="#">Create Employee</a>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Employee</th>
+                        <th>Emp Code</th>
+                        <th>Department</th>
+                        <th>Designation</th>
+                        <th>contact</th>
+                        <th>Gender</th>
+                        <th>DOJ</th>
+                         
+                                       
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for emp in emp %}
+                  <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ emp.user.username}}</td>
+                    <td>{{  emp.empcode }}</td>
+                    <td>{{  emp.empdept}}</td>
+                    <td>{{  emp.designation}}</td>
+                    <td>{{ emp.contact }}</td>
+                    <td>{{ emp.gender }}</td>
+                    <td>{{ emp.joiningdate }}</td>
+                    
+                    
+                    
+                  </tr>
+                  {% endfor %}
+                  
+                  
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h5>HOD</h5>
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary btn-sm, btn-blcok" href="#">Create HOD</a>
+            <table class="table table-sm">
+                <tr>
+                    <th></th>
+                    <th>HOD</th>  
+                    <th>Department</th>
+                    <th>Total Staff</th>
+                    <th>Last Login</th>                 
+                    
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,67 @@
+{% extends "employee/base.html" %}
+
+{% block content %}
+<br>
+<div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3">
+        <div class="sidebar">
+          <h3>Menu</h3>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Leave</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Attendance</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="col-md-9">
+        <h1>Employee Information</h1>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Name of Employee:</h5>
+            <p>John Doe</p>
+            
+            <h5>Date of Joining:</h5>
+            <p>2021-01-01</p>
+            
+            <h5>Date of Birth:</h5>
+            <p>1990-05-15</p>
+            
+            <h5>Gender:</h5>
+            <p>Male</p>
+          </div>
+          <div class="col-md-6">
+            <h5>Designation:</h5>
+            <p>Software Engineer</p>
+            
+            <h5>Active:</h5>
+            <p>Yes</p>
+            
+            <h5>Total Leave Approved:</h5>
+            <p>10</p>
+            
+            <h5>Taken Leave:</h5>
+            <p>5</p>
+            
+            <h5>Attendance:</h5>
+            <p>90%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
