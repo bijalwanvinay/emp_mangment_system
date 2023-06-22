@@ -12,4 +12,5 @@ urlpatterns = [
     path('profile', views.profile, name='profile'),
     path('leaveApply', views.leaveApply, name='leaveApply'),
     path('deleteLeave/<id>/', views.deleteLeave, name='deleteLeave'),
+    path('leave_report', views.leave_report, name='leave_report'),
 ]

@@ -179,3 +179,8 @@ def deleteLeave(request, id):
     leave = Leave.objects.get(id = id)
     leave.delete()
     return redirect('leaveApply')
+
+
+def leave_report(request):
+    leave_report = Leave.objects.all()
+    pass
