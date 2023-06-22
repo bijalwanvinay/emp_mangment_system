@@ -2,6 +2,7 @@
 
 ## Requirement.txt 
 ### Django 4.2
+### Javascript
 
 `clone https://github.com/vinaybijalwan/emp_mangment_system.git `
 
