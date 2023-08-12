@@ -16,5 +16,7 @@ go to browser and type  http://127.0.0.1:8000/
  `python manage.py createsuperuser`
 #### migrate database
 `python manage.py makemigartions`
+
 `python manage.py migrate`
+
 login with superuser for admin
